@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="hero">
+    <video autoplay loop muted playsinline class="video">
+      <source src="video.mp4" type="video/mp4">
+    </video>
+  </div>
+
+
+  <nav class="under">
+    
+    <a href="#home">HOME</a>
+    <a href="#about">ABOUT</a>
+    <a href="#projects">PROJECTS</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+
+  <section id="home">
+    <div class="home">
+      <div id="typedtext"> 
+        <h1>Hello World,</h1>
+        <h1>Welcome to Sahas Sharma's portfolio.</h1>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="about-container">
+      <div class="about-content">
+        <h2 class="hover">ABOUT ME</h2>
+        <div class="intro">
+          <ul>
+            <li>Creative individual who brings innovative ideas to life</li>
+            <li>Natural leader with a passion for guiding teams towards success</li>
+            <li>Thrives on collaboration and the power of teamwork</li>
+            <li>Constantly pushing boundaries to engage and captivate audiences</li>
+          </ul>
+        </div>
+      </div>
+      <div class="founder">
+        <img class="SahasPic" src="sahaspic.jpeg" alt="Sahas Sharma" onmouseenter="
+          this.src = 'cybersahas.jpeg';
+        " onmouseout="
+          this.src = 'sahaspic.jpeg';
+        ">
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2 class="hover">Projects</h2>
+    <div class="projects">
+      
+      <div class="project">
+        <h3>UNDER CONSTRUCTION</h3>
+        <p>UNDER CONSTRUCTION</p>
+        <a href="........................." target="_blank">View Project</a>
+      </div>
+      <div class="project">
+        <h3>UNDER CONSTRUCTION</h3>
+        <p>UNDER CONSTRUCTION</p>
+        <a href=".........................." target="_blank">View Project</a>
+      </div>
+      <div class="project">
+        <h3>UNDER CONSTRUCTION</h3>
+        <p>UNDER CONSTRUCTION</p>
+        <a href="....................." target="_blank">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="hover2">Contact</h2>
+    <p class="hover3">If you'd like to get in touch, feel free to reach out.</p>
+    <div class="intro">
+     
+      <div class="contact-form">
+        <form action="mailto:sahas1345ss@gmail.com" method="POST" enctype="text/plain">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button class="glow-on-hover" type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class="social-icons">
+    <a href="https://twitter.com/sahasyy" target="_blank"><img class="twitter" src="twitt.png" alt="Twitter"></a>
+    <a href="https://www.instagram.com/sahasyy/" target="_blank"><img class="insta" src="insta.jpeg"></a>
+    <a href="https://open.spotify.com/user/zpvm4zw2wf8msyf09rl056bnw" target="_blank"><img class="spotify" src="spotify.png"></a>
+    <a href="https://www.linkedin.com/in/sahassharma/" target="_blank"><img class="linkedin"src="linkedin.jpeg" alt="LinkedIn"></a>
+  </div>
+
+  <footer>
+    &copy; 2023. All rights reserved. | Made with     <svg class="heart" viewBox="0 0 32 29.6">
+      <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+      c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z"/>
+    </svg>   by Sahasyy
+  </footer>
+</body>
+<script>
+  var aText = new Array(
+    "Hello, World.", 
+    "Welcome to Sahas Sharma's portfolio.",
+    "Scroll down or use the navigation menu."
+  );
+  var iSpeed = 100; // time delay of print out
+  var iIndex = 0; // start printing array at this position
+  var iArrLength = aText[0].length; // the length of the text array
+  var iScrollAt = 20; // start scrolling up at this many lines
+  
+  var iTextPos = 0; // initialize text position
+  var sContents = ''; // initialize contents variable
+  var iRow; // initialize current row
+  
+  function typewriter() {
+    sContents = '';
+    iRow = Math.max(0, iIndex-iScrollAt);
+    var destination = document.getElementById("typedtext");
+  
+    while (iRow < iIndex) {
+      sContents += aText[iRow++] + '<br />';
+    }
+  
+    destination.innerHTML = sContents + aText[iIndex].substring(0, iTextPos) + "_";
+  
+    if (iTextPos++ == iArrLength) {
+      iTextPos = 0;
+      iIndex++;
+  
+      if (iIndex != aText.length) {
+        iArrLength = aText[iIndex].length;
+        setTimeout("typewriter()", 500);
+      }
+    } else {
+      setTimeout("typewriter()", iSpeed);
+    }
+  }
+  
+  typewriter();
+</script>
+</html>
+
+//"There are only 10 types of people in the world:", 
+"Those who understand binary, and those who don't"
